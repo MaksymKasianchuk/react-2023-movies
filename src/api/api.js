@@ -14,7 +14,7 @@ export const getTrending = async () => {
 export const searchMovies = async (query, page, adult = false, year) => {
     const getYearStr = year ? `&year=${year}` : '';
     const response = await axios.get(`/search/movie?api_key=${API_KEY}&query=${query}&page=${page}&include_adult=${adult}${getYearStr}`);
-    return response.data;
+    return response.data.results;
 };
 
 export const getMovieById = async (id) => {

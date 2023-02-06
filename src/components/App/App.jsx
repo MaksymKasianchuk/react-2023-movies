@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import SharedLayout from 'components/SharedLayout';
 
 const Home = lazy(() => import("pages/Home"));
-// const Movies = lazy(() => import("pages/Movies"));
+const Movies = lazy(() => import("pages/Movies"));
 // const MovieDetails = lazy(() => import("pages/MovieDetails"));
 // const Cast = lazy(() => import("components/Cast"));
 // const Reviews = lazy(() => import("components/Reviews"));
@@ -13,7 +13,7 @@ const App = () => {
     return(
         <Routes>
             <Route path='/' element={ <SharedLayout /> }>
-                <Route index element={ <Home/> } />
+                <Route index element={ <Home /> } />
                 {/*
                 <Route path='movies' element={ <Movies/> } />
                 <Route path='movies/:movieId' element={ <MovieDetails/> }>
@@ -21,7 +21,7 @@ const App = () => {
                     <Route path='reviews' element={ <Reviews/> } />
                 </Route> */}
                
-                <Route path='movies' element={ <></> } />
+                <Route path='movies' element={ <Movies /> } />
                 <Route path='movies/:movieId' element={ <></> }>
                     <Route path='cast' element={ <></> } />
                     <Route path='reviews' element={ <></> } />
