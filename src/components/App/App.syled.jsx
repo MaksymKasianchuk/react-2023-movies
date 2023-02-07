@@ -16,7 +16,7 @@ export const ErrorMessage = styled.p`
     margin-top: 5px;
     text-align: center;
     padding: 10px;
-    border: 1px solid  ${props => props.theme.colors.border};
+    border: ${props => props.theme.colors.border};
 `;
 
 export const LoadMoreBtnWrap = styled.div`
@@ -24,4 +24,19 @@ export const LoadMoreBtnWrap = styled.div`
     align-items: center;
     justify-content: center;
     padding: 40px 0;
+`;
+
+export const WhiteCard = styled.div`
+    width: 100%;
+    background: ${props => props.theme.colors.cardBgColor};
+    box-shadow: ${props => props.theme.colors.boxShadow};
+    border-radius: ${props => props.theme.radii.cardBorderRadius}px;
+    border: ${props => props.theme.colors.border};
+    overflow: hidden;
+    &>a {
+        text-decoration: none;
+    }
+    & img{
+        width: 100%;
+    }
 `;
