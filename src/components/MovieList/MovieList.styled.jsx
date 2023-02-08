@@ -4,7 +4,9 @@ import styled from '@emotion/styled';
 export const MovieListContainer = styled.ul`
     display: grid;
     grid-template-columns: repeat(auto-fit, 200px);
-    gap: 16px;
+    gap: 40px;
+    margin: 0;
+    padding: 40px 0;
 `;
 
 export const MovieName = styled.p`

@@ -11,19 +11,23 @@ const SharedLayout = () => {
   return (
     <>
        {/* <OrbOverlay /> */}
-        <Container>
-            <Header>
+        <Header>
+            <Container>
                 <Logo to="/">
                     <span role="img" aria-label="computer icon">
                     🎥
                     </span>{" "}
-                    MovieLib
+                    <span className="logo-txt">
+                        MovieLib
+                    </span>
                 </Logo>
                 <nav>
                     <NavLinkStyled to="/" end>Home</NavLinkStyled>
                     <NavLinkStyled to="/movies">Movies</NavLinkStyled>
                 </nav>
-            </Header>
+            </Container>
+        </Header>
+        <Container>
             <Suspense fallback={<FallbackMsg>Loading page...</FallbackMsg>}>
                 <Outlet />
             </Suspense>

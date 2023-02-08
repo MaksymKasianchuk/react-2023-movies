@@ -16,7 +16,8 @@ export const theme = Object.freeze({
         complimentary1: 'hsl(var(--hue-complimentary1), 95%, 50%)',
         complimentary2: 'hsl(var(--hue-complimentary2), 95%, 50%)',
         bgGradient: 'linear-gradient(to bottom, hsl(var(--hue), 95%, 99%), hsl(var(--hue), 95%, 84%))',
-        boxShadow: '0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1)'
+        boxShadow: '0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1)',
+        btnGrad: 'linear-gradient( 45deg, hsl(346, 95%, 50%) 25%, hsl(406, 95%, 50%))',
     },
     radii: {
         cardBorderRadius: '10',
