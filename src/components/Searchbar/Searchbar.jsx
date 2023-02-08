@@ -26,20 +26,21 @@ const Searchbar = ({values, submitHandler }) => {
         onSubmit={handleSubmit}
         >
             <SearchbarStyled>
-                <FormGroup>
-                    <label htmlFor={queryId}>Search Qery*</label>
-                    <FieldStyled type="text" id={queryId} name="query" placeholder="Enter search query"/>
-                    <ErrorMessageStyled name="query" component='div'/>
-                </FormGroup>
-                <FormGroup>
-                    <label htmlFor={yearId}>Adult included</label>
-                    <FieldStyled type="number" id={yearId} name="year" placeholder="Enter search year"/>
-                </FormGroup>
-                <FormGroup>
-                    <label htmlFor={adultId}>Adult included</label>
-                    <FieldStyled type="checkbox" id={adultId} name="adult"/>
-                </FormGroup>
-                <FormButton type="submit">🔍</FormButton>
+                <div>
+                    <FormGroup>
+                        <label htmlFor={queryId}>Search Qery*</label>
+                        <FieldStyled type="text" id={queryId} name="query" placeholder="Enter search query"/>
+                        <ErrorMessageStyled name="query" component='div'/>
+                    </FormGroup>
+                    <FormGroup>
+                        <label htmlFor={yearId}>Year of release</label>
+                        <FieldStyled type="number" id={yearId} name="year" placeholder="Enter search year"/>
+                    </FormGroup>
+                    <FormGroup>
+                        <label htmlFor={adultId}><FieldStyled type="checkbox" id={adultId} name="adult"/>Adult included</label>
+                    </FormGroup>
+                </div>
+                <FormButton type="submit">🔍 Search</FormButton>
             </SearchbarStyled>
         </Formik>
     ) 

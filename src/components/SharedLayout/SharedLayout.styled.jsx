@@ -2,16 +2,15 @@ import styled from '@emotion/styled';
 import { NavLink, Link } from "react-router-dom";
 
 export const Header = styled.header`
+    box-shadow: ${props => props.theme.colors.boxShadow};
     &>div{
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 16px;
-        // border-bottom: 1px solid black;
+        padding: 16px 32px;
         border: ${props => props.theme.colors.border};
-        border-radius: ${props => props.theme.radii.cardBorderRadius}px;
-        mix-blend-mode: soft-light;
-        box-shadow: ${props => props.theme.colors.boxShadow};
+        // border-radius: ${props => props.theme.radii.cardBorderRadius}px;
+        
     }
     &> nav {
         display: flex;
@@ -35,7 +34,7 @@ export const Logo = styled(Link)`
 
 export const NavLinkStyled = styled(NavLink)`
     padding: 8px 16px;
-    border-radius: 4px;
+    border-radius: ${props => props.theme.radii.button}px;
     text-decoration: none;
     color: black;
     font-weight: 500;

@@ -4,9 +4,9 @@ import { useSearchParams } from "react-router-dom";
 import MovieList from 'components/MovieList';
 import Loader from 'components/Loader';
 import Searchbar from 'components/Searchbar';
-import Button from 'components/Button';
+import LoadMoreButton from 'components/LoadMoreButton';
 import { STATUSES } from 'constants/statuses';
-import { ErrorMessage, LoadMoreBtnWrap } from 'components/App/App.syled';
+import { ErrorMessage } from 'components/App/App.syled';
 
 const Movies = () => {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -88,9 +88,7 @@ const Movies = () => {
             <Searchbar values={getValues()} submitHandler={handleSubmit} />
             <MovieList movies={movies}/>
             {status === STATUSES.PENDING ? (<Loader/>) : (
-            <LoadMoreBtnWrap>
-                <Button clickHandler={loadMore}/>
-            </LoadMoreBtnWrap>
+                <LoadMoreButton clickHandler={loadMore}/>
             )}
         </>
         );

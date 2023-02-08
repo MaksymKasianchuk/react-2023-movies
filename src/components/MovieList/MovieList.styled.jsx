@@ -4,9 +4,9 @@ import styled from '@emotion/styled';
 export const MovieListContainer = styled.ul`
     display: grid;
     grid-template-columns: repeat(auto-fit, 200px);
-    gap: 40px;
+    gap: 25px;
     margin: 0;
-    padding: 40px 0;
+    padding: 20px;
 `;
 
 export const MovieName = styled.p`
@@ -23,7 +23,7 @@ export const MovieName = styled.p`
 
 export const MovieCard = styled.li`
     width: 100%;
-    mix-blend-mode: soft-light;
+    // mix-blend-mode: soft-light;
     box-shadow: ${props => props.theme.colors.boxShadow};
     border-radius: ${props => props.theme.radii.cardBorderRadius}px;
     border: ${props => props.theme.colors.border};

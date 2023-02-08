@@ -1,6 +1,7 @@
 import  *  as api from 'api/api';
 import { useState, useEffect } from 'react';
 import MovieList from 'components/MovieList';
+import Section from 'components/Section';
 
 const Home = () => {
     const [movies, setMovies] = useState([]);
@@ -18,7 +19,9 @@ const Home = () => {
     }, []);
     // console.log(movies);
     return (
-        <MovieList movies={movies}/>
+        <Section title='Weekly trending movies'>
+            <MovieList movies={movies}/>
+        </Section>
     )
 }
 export default Home;

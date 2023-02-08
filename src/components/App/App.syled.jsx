@@ -17,15 +17,9 @@ export const ErrorMessage = styled.p`
     border-radius:  ${props => props.theme.radii.cardBorderRadius}px;
     margin-top: 5px;
     text-align: center;
-    padding: 10px;
+    padding: 20px;
+    margin-top: 40px; 
     border: ${props => props.theme.colors.border};
-`;
-
-export const LoadMoreBtnWrap = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 0;
 `;
 
 export const Toggle = styled.button`
