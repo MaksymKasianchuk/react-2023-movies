@@ -8,7 +8,7 @@ import LoadMoreButton from 'components/LoadMoreButton';
 import { STATUSES } from 'constants/statuses';
 import { ErrorMessage } from 'components/App/App.syled';
 
-const Movies = () => {
+const MoviesView = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     const params = useMemo(
         () => Object.fromEntries([...searchParams]),
@@ -78,30 +78,32 @@ const Movies = () => {
 
     if(status === STATUSES.IDLE){
         return(
-            <Searchbar values={getValues()} submitHandler={handleSubmit} />
+            <main>
+                <Searchbar values={getValues()} submitHandler={handleSubmit} />
+            </main>
         );
     };
     
     if(status === STATUSES.PENDING || status === STATUSES.RESOLVED ){
         return(
-        <>
-            <Searchbar values={getValues()} submitHandler={handleSubmit} />
-            <MovieList movies={movies}/>
-            {status === STATUSES.PENDING ? (<Loader/>) : (
-                <LoadMoreButton clickHandler={loadMore}/>
-            )}
-        </>
+            <main>
+                <Searchbar values={getValues()} submitHandler={handleSubmit} />
+                <MovieList movies={movies}/>
+                {status === STATUSES.PENDING ? (<Loader/>) : (
+                    <LoadMoreButton clickHandler={loadMore}/>
+                )}
+            </main>
         );
     };
 
     if(status === STATUSES.REJECTED){
         return(
-            <>
+            <main>
                 <Searchbar values={getValues()} submitHandler={handleSubmit} />
                 <ErrorMessage>{error}</ErrorMessage>
-            </>
+            </main>
         );
     };
 }
 
-export default Movies;
+export default MoviesView;

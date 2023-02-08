@@ -10,7 +10,7 @@ body{
   padding: 0;
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  color: hsl(var(--hue), 100%, 9%);
+  color: #333333;
   background:  linear-gradient(
     to bottom,
     hsl(var(--hue), 95%, 99%),

@@ -7,7 +7,7 @@ import OrbOverlay from "components/OrbOverlay";
 const SharedLayout = () => {
   return (
     <>
-       {/* <OrbOverlay /> */}
+       <OrbOverlay />
         <Header>
             <Container>
                 <Logo to="/">

@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import MovieList from 'components/MovieList';
 import Section from 'components/Section';
 
-const Home = () => {
+const HomeView = () => {
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
@@ -24,4 +24,4 @@ const Home = () => {
         </Section>
     )
 }
-export default Home;
+export default HomeView;

@@ -2,9 +2,11 @@ import { useParams, useLocation, Link, Outlet, NavLink} from "react-router-dom";
 import { useState, useEffect, Suspense } from "react";
 import { getMovieById } from "api/api";
 import { STATUSES } from 'constants/statuses';
-import placeholder from 'img/404.jpg';
+import MovieDetails from "components/MovieDetails";
+import Loader from 'components/Loader';
+import { ErrorMessage } from 'components/App/App.syled';
 
-const MovieDeatails = () => {
+const MovieDeatailsView = () => {
     const { movieId } = useParams();
     const [movie, setMovie] = useState({});
     const [error, setError] = useState('');
@@ -34,25 +36,40 @@ const MovieDeatails = () => {
         fetchMovie();
     }, [movieId]);
 
-    const {poster_path, adult, backdrop_path, genres, overview, vote_average, vote_count, production_companies, production_countries, release_date, status, title} = movie;
-    const imgPath = poster_path ? `https://image.tmdb.org/t/p/w500${poster_path}` : placeholder;
-    return(
-        <article>
-            <Link to={backLinkHref}>👈🏻 Go Back</Link>
-            <div>
-                <img src={imgPath} alt="" />
-            </div>
-            <div>
+   
+    if(appStatus === STATUSES.IDLE || appStatus === STATUSES.PENDING){
+        return(
+            <main>
+                <Link to={backLinkHref}>👈🏻 Go Back</Link>
+                <Loader />
+            </main>
+        );
+    };
+    if( appStatus === STATUSES.RESOLVED ){
+        return(
+            <main>
+                <Link to={backLinkHref}>👈🏻 Go Back</Link>
+                <MovieDetails movie={movie} />
                 <div>
-                    <NavLink to="cast">Cast</NavLink>
-                    <NavLink to="reviews">Rewiews</NavLink>
+                    <div>
+                        <NavLink to="cast">Cast</NavLink>
+                        <NavLink to="reviews">Rewiews</NavLink>
+                    </div>
+                    <Suspense fallback={<p>Loading page...</p>}>
+                        <Outlet />
+                    </Suspense>
                 </div>
-                <Suspense fallback={<p>Loading page...</p>}>
-                    <Outlet />
-                </Suspense>
-            </div>
-        </article>
-    );
+            </main>
+        );
+    };
+    if(appStatus === STATUSES.REJECTED){
+        return(
+            <main>
+                <Link to={backLinkHref}>👈🏻 Go Back</Link>
+                <ErrorMessage>{error}</ErrorMessage>
+            </main>
+        );
+    };
 };
 
-export default MovieDeatails;
+export default MovieDeatailsView;
