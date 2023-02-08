@@ -1,6 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { MovieListContainer, MovieName } from "./MovieList.styled";
-import { WhiteCard } from 'components/App/App.syled';
+import { MovieListContainer, MovieName, MovieCard } from "./MovieList.styled";
 import placeholder from '../../img/404.jpg';
 
 const MovieList = ({ movies }) => {
@@ -11,12 +10,12 @@ const MovieList = ({ movies }) => {
                 movies.map(({id, title, poster_path}) => {
                     const imgPath = poster_path ? `https://image.tmdb.org/t/p/w500${poster_path}` : placeholder;
                     return(
-                        <WhiteCard key={id}>
+                        <MovieCard key={id}>
                             <Link to={`/movies/${id}`} state={{ from: location }}>
                                 <img src={imgPath} alt={title} />
-                                <MovieName>{title}</MovieName>
+                                <MovieName><span>{title}</span></MovieName>
                             </Link>
-                        </WhiteCard>
+                        </MovieCard>
                     )}
                 )
             }

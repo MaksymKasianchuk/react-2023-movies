@@ -5,9 +5,12 @@ import { Header, Logo, NavLinkStyled, FallbackMsg } from './SharedLayout.styled'
 import OrbOverlay from "components/OrbOverlay";
 
 const SharedLayout = () => {
+    // const [bg, setBg] = useState(true);
+    // const toggleClass = !bg ? "off" : ''; 
+    // <Toggle className={toggleClass} type="button" onClick={() => {setBg(!bg);}}/>
   return (
     <>
-       <OrbOverlay />
+       {/* <OrbOverlay /> */}
         <Container>
             <Header>
                 <Logo to="/">

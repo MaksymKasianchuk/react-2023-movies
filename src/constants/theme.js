@@ -6,8 +6,6 @@ export const theme = Object.freeze({
         lightText: '#535559',
         whiteText: '#ffffff',
         bodyBg: '#e7ecf2',
-        friendOnline: '#00ff00',
-        friendOffline: '#ff0000',
         theadColor: '#00bcd5',
         dangerColor: '#bb2525',
         dangerBg: '#fdb1b1',
@@ -26,5 +24,8 @@ export const theme = Object.freeze({
     },
     fonts: {
         font1: '"Poppins", system-ui',
-    }
+    },
+    transitions: {
+        trAllDefLin: 'all 250ms linear',
+    },
 });  

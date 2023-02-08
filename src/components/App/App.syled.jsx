@@ -4,6 +4,8 @@ export const Container = styled.div`
     max-width: 960px;
     margin: 0 auto;
     padding: 0 16px;
+    position: relative;
+    z-index: 1;
 `;
 
 export const ErrorMessage = styled.p`
@@ -26,17 +28,31 @@ export const LoadMoreBtnWrap = styled.div`
     padding: 40px 0;
 `;
 
-export const WhiteCard = styled.div`
-    width: 100%;
-    background: ${props => props.theme.colors.cardBgColor};
-    box-shadow: ${props => props.theme.colors.boxShadow};
-    border-radius: ${props => props.theme.radii.cardBorderRadius}px;
+export const Toggle = styled.button`
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    background: transparrent;
+    mix-blend-mode: soft-light;
     border: ${props => props.theme.colors.border};
-    overflow: hidden;
-    &>a {
-        text-decoration: none;
+    border-radius: 50%;
+    position: relative;
+    &::before{
+        content: 'on';
+        width: 30px;
+        height: 30px;
+        background: background: ${props => props.theme.colors.cardBgColor};
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: auto;
+        transform: translateY(-50%);
+        transition: all 250ms linear;
     }
-    & img{
-        width: 100%;
+    &.off::before{
+        content: 'off';
+        left: auto;
+        right: 0;
     }
 `;
+// background: ${props => props.theme.colors.cardBgColor};
