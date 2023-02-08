@@ -11,11 +11,12 @@ export const MovieName = styled.p`
     margin: 0;
     padding: 20px;
     font-weight: 700;
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
-    color: ${props => props.theme.colors.darkColor};
+    color: ${props => props.theme.colors.lightText};
 `;
 
 export const MovieCard = styled.li`
