@@ -10,6 +10,12 @@ export const MovieDetailsWrap = styled.div`
     justify-content: flex-start;
     background: ${props => props.theme.colors.cardBg};
     margin-top: 40px;
+    @media screen and (max-width: 768px) {
+        // display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }      
 `;
 
 export const Poster = styled.div`
@@ -34,6 +40,18 @@ export const Poster = styled.div`
             line-height: 1;
         }
     }
+    @media screen and (max-width: 768px) {
+        text-align: center;
+        margin-right: 0;
+        padding: 20px;
+    }  
+    @media screen and (max-width: 400px) {
+        &>div{
+            &>img{
+                width: 100%;
+            }
+        }
+    }  
 `;
 
 export const MovieTitle = styled.h2`
@@ -42,6 +60,9 @@ export const MovieTitle = styled.h2`
 
 export const InfoBlock = styled.div`
     padding: 20px 20px 20px 0;
+    @media screen and (max-width: 768px) {
+        padding: 20px;
+    }  
 `;
 
 export const ShortInfo = styled.p`

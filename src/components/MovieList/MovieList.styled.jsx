@@ -7,6 +7,7 @@ export const MovieListContainer = styled.ul`
     gap: 25px;
     margin: 0;
     padding: 20px;
+    justify-content: center;
 `;
 
 export const MovieName = styled.p`
@@ -44,9 +45,13 @@ export const MovieCard = styled.li`
         width: 100%;
         min-width: 198px;
         min-height: 297px;
+        transition: ${props => props.theme.transitions.trAllDefLin};
     }
     &:hover{
-        opacity: 0.8;
+        & img{
+            opacity: 0.6;
+        }
+        background: ${props => props.theme.colors.whiteText};
         // transform: scale(1.02);
     }
 `;

@@ -2,6 +2,9 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getMovieCast } from "api/api";
 import { STATUSES } from 'constants/statuses';
+import { ErrorMessage } from 'components/App/App.syled';
+import { CastSection, CastList } from './Cast.styled';
+import Loader from "components/Loader";
 import placeholder from 'img/404.jpg';
 
 const Cast = () => {
@@ -33,23 +36,43 @@ const Cast = () => {
         fetchCast();
     }, [movieId]);
 
-
-    return(
-        <ul>
-            {
-                cast.map(({profile_path, original_name, character, cast_id}) => {
-                    const imgPath = profile_path ? `https://image.tmdb.org/t/p/w500/${profile_path}` : placeholder;
-                    return (
-                        <li key={cast_id}>
-                            <img src={imgPath} alt={original_name} />
-                            <p>{original_name}</p>
-                            <p>{character}</p>
-                        </li>
-                    );
-                })
-            }
-        </ul>
-    );
+    if(appStatus === STATUSES.IDLE){
+        return(<></>);
+    }
+    if(appStatus === STATUSES.PENDING){
+        return(
+            <CastSection>
+                <Loader/>
+            </CastSection>
+        )
+    }
+    if(appStatus === STATUSES.RESOLVED){
+        return(
+            <CastSection>
+                <CastList>
+                    {
+                        cast.map(({profile_path, original_name, character, cast_id}) => {
+                            const imgPath = profile_path ? `https://image.tmdb.org/t/p/w500/${profile_path}` : placeholder;
+                            return (
+                                <li key={cast_id}>
+                                    <img src={imgPath} alt={original_name} />
+                                    <p className="actor-name"><span>{original_name}</span></p>
+                                    <p className="actor-character">Character: <span>{character}</span></p>
+                                </li>
+                            );
+                        })
+                    }
+                </CastList>
+            </CastSection>
+        )
+    }
+    if(appStatus === STATUSES.REJECTED){
+        return(
+            <CastSection>
+                <ErrorMessage>{error}</ErrorMessage>
+            </CastSection>
+        );
+    };
 };
 
 export default Cast;

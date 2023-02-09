@@ -10,11 +10,16 @@ export const Header = styled.header`
         align-items: center;
         justify-content: space-between;
         padding: 16px 32px;
-        // border-radius: ${props => props.theme.radii.cardBorderRadius}px;
-        
     }
-    &> nav {
+    & nav {
         display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    @media screen and (max-width: 500px) {
+        & nav {
+            flex-direction: column;
+        }
     }
 `;
 
@@ -39,6 +44,7 @@ export const NavLinkStyled = styled(NavLink)`
     text-decoration: none;
     color: black;
     font-weight: 500;
+    font-size: 18px;
     margin-left: 10px;
     transition: ${props => props.theme.transitions.trAllDefLin}; 
     &.active {
@@ -46,7 +52,7 @@ export const NavLinkStyled = styled(NavLink)`
         background: ${props => props.theme.colors.btnGrad};
     }
     &:hover{
-        opacity: 0.8;
-        background-color: #f3f3f3;
+        opacity: 0.6;
+        background-color: ${props => props.theme.colors.whiteText};;
     }
 `;

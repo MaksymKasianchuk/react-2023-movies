@@ -55,8 +55,9 @@ export const MovieBottom = styled.div`
 `;
 export const MovieControls = styled.div`
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
+    padding: 0 15px;
     &>div{
         &>a{
             padding: 8px 16px;
@@ -81,6 +82,7 @@ export const MovieControls = styled.div`
             &.active{
                 border-bottom-right-radius: 0;
                 border-bottom-left-radius: 0;
+                height: 40px;
                 background: ${props => props.theme.colors.whiteText};
             }
         }

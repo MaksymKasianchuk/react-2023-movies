@@ -18,6 +18,14 @@ export const SearchbarStyled = styled(Form)`
         justify-content: space-between;
         width: 100%;
     }
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        &>div{
+            flex-direction: column;
+        }
+    }
 `;
 
 export const FormGroup = styled.div`
@@ -31,23 +39,30 @@ export const FormGroup = styled.div`
         margin-bottom: 5px;
     }
     margin-right: 20px;
+    @media screen and (max-width: 768px) {
+        margin: 0 0 15px 0;
+    }
 `;
 
 export const FormButton = styled.button`
     padding: 8px 16px;
     border-radius: ${props => props.theme.radii.button}px;
     outline: none;
-    border: 1px solid #eeeeee;
+    border: 1px solid ${props => props.theme.colors.whiteText}; 
     color: black;
     font-weight: 500;
     margin-left: 10px;
     min-width: 100px;
     transition: ${props => props.theme.transitions.trAllDefLin}; 
-    background-color: #f3f3f3;
+    background-color: ${props => props.theme.colors.whiteText}; 
+    box-shadow: ${props => props.theme.colors.boxShadow};
     cursor: pointer;
     margin: 0;
     &:hover{
-        opacity: 0.8;
+        background-color: ${props => props.theme.colors.cardBg}; 
+    }
+    @media screen and (max-width: 768px) {
+        min-width: 180px;
     }
 `;
 
