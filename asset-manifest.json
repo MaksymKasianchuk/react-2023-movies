@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-2023-movies/static/css/main.60b0d206.css",
-    "main.js": "/react-2023-movies/static/js/main.8076447e.js",
+    "main.js": "/react-2023-movies/static/js/main.dea691c3.js",
     "static/js/799.d98a4fa7.chunk.js": "/react-2023-movies/static/js/799.d98a4fa7.chunk.js",
     "static/js/830.71cd8af2.chunk.js": "/react-2023-movies/static/js/830.71cd8af2.chunk.js",
     "static/js/414.e40d7920.chunk.js": "/react-2023-movies/static/js/414.e40d7920.chunk.js",
@@ -13,7 +13,7 @@
     "static/media/404.jpg": "/react-2023-movies/static/media/404.dca0b6ba9dd770e471a5.jpg",
     "index.html": "/react-2023-movies/index.html",
     "main.60b0d206.css.map": "/react-2023-movies/static/css/main.60b0d206.css.map",
-    "main.8076447e.js.map": "/react-2023-movies/static/js/main.8076447e.js.map",
+    "main.dea691c3.js.map": "/react-2023-movies/static/js/main.dea691c3.js.map",
     "799.d98a4fa7.chunk.js.map": "/react-2023-movies/static/js/799.d98a4fa7.chunk.js.map",
     "830.71cd8af2.chunk.js.map": "/react-2023-movies/static/js/830.71cd8af2.chunk.js.map",
     "414.e40d7920.chunk.js.map": "/react-2023-movies/static/js/414.e40d7920.chunk.js.map",
@@ -25,6 +25,6 @@
   },
   "entrypoints": [
     "static/css/main.60b0d206.css",
-    "static/js/main.8076447e.js"
+    "static/js/main.dea691c3.js"
   ]
 }
