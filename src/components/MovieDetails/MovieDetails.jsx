@@ -11,7 +11,7 @@ import {
 } from './MovieDetails.styled';
 
 const MovieDetails = ({ movie }) => {
-    const {poster_path, adult, backdrop_path, genres, overview, vote_average, vote_count, production_companies, production_countries, release_date, status, title} = movie;
+    const {poster_path, adult, genres, overview, vote_average, vote_count, production_companies, production_countries, release_date, status, title} = movie;
     const imgPath = poster_path ? `https://image.tmdb.org/t/p/w500${poster_path}` : placeholder;
     const releaseDate = release_date.split('-').reverse().join('.');
     const normalizedVote = Math.round((vote_average + Number.EPSILON) * 100) / 100

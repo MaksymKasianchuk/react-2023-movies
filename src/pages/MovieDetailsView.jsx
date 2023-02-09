@@ -1,4 +1,4 @@
-import { useParams, useLocation, Link, Outlet, NavLink} from "react-router-dom";
+import { useParams, useLocation, Outlet, NavLink} from "react-router-dom";
 import { useState, useEffect, Suspense } from "react";
 import { getMovieById } from "api/api";
 import { STATUSES } from 'constants/statuses';

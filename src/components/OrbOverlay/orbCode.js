@@ -1,6 +1,6 @@
 import * as PIXI from "pixi.js";
 import { KawaseBlurFilter } from "@pixi/filter-kawase-blur";
-import {SimplexNoise} from "simplex-noise";
+import { SimplexNoise } from "simplex-noise";
 import hsl from "hsl-to-hex";
 import debounce from "debounce";
 
@@ -183,7 +183,8 @@ function random(min, max) {
     // auto adjust size to fit the current window
     resizeTo: window,
     // transparent background, we will be creating a gradient background later using CSS
-    backgroundAlpha: 0
+    // backgroundAlpha: 0
+    transparent: true
   });
   
   app.stage.filters = [new KawaseBlurFilter(30, 10, true)];
