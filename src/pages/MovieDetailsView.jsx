@@ -2,7 +2,7 @@ import { useParams, useLocation, Outlet, NavLink} from "react-router-dom";
 import { useState, useEffect, Suspense } from "react";
 import { getMovieById } from "api/api";
 import { STATUSES } from 'constants/statuses';
-import { ErrorMessage, MovieBottom, MovieControls } from 'components/App/App.syled';
+import { ErrorMessage, MovieBottom, MovieControls, MovieDetailsMain } from 'components/App/App.syled';
 import MovieDetails from "components/MovieDetails";
 import Loader from 'components/Loader';
 import GoToLink from "components/GoToLink";
@@ -40,15 +40,15 @@ const MovieDeatailsView = () => {
    
     if(appStatus === STATUSES.IDLE || appStatus === STATUSES.PENDING){
         return(
-            <main>
+            <MovieDetailsMain>
                 <GoToLink goToPath={backLinkHref}>👈🏻 Go Back</GoToLink>
                 <Loader />
-            </main>
+            </MovieDetailsMain>
         );
     };
     if( appStatus === STATUSES.RESOLVED ){
         return(
-            <main>
+            <MovieDetailsMain>
                 <MovieDetails movie={movie} />
                 <MovieBottom>
                     <MovieControls>
@@ -62,15 +62,15 @@ const MovieDeatailsView = () => {
                         <Outlet />
                     </Suspense>
                 </MovieBottom>
-            </main>
+            </MovieDetailsMain>
         );
     };
     if(appStatus === STATUSES.REJECTED){
         return(
-            <main>
+            <MovieDetailsMain>
                 <GoToLink goToPath={backLinkHref}>👈🏻 Go Back</GoToLink>
                 <ErrorMessage>{error}</ErrorMessage>
-            </main>
+            </MovieDetailsMain>
         );
     };
 };

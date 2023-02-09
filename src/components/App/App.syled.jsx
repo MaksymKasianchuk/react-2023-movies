@@ -49,10 +49,11 @@ export const Toggle = styled.button`
         right: 0;
     }
 `;
-// background: ${props => props.theme.colors.cardBgColor};
+
 export const MovieBottom = styled.div`
     margin: 40px 0 0 0;
 `;
+
 export const MovieControls = styled.div`
     display: flex;
     align-items: flex-start;
@@ -87,4 +88,8 @@ export const MovieControls = styled.div`
             }
         }
     }
+`;
+
+export const MovieDetailsMain = styled.div`
+    padding-bottom: 40px;
 `;
