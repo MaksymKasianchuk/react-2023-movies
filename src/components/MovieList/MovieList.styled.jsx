@@ -40,6 +40,10 @@ export const MovieCard = styled.li`
         width: 100%;
         align-items: center;
         justify-content: space-between;
+        &>div{
+            width: 100%;
+            position: relative;
+        }
     }
     & img{
         width: 100%;
@@ -52,6 +56,19 @@ export const MovieCard = styled.li`
             opacity: 0.6;
         }
         background: ${props => props.theme.colors.whiteText};
-        // transform: scale(1.02);
     }
+`;
+
+export const Vote = styled.p`
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+    background: ${props => props.theme.colors.btnGrad};
+    color: ${props => props.theme.colors.whiteText};
+    border-radius: ${props => props.theme.radii.input}px;
+    padding: 5px 10px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1;
+    margin: 0;
 `;

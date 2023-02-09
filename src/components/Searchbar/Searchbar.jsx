@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import * as yup from 'yup';
 import { nanoid } from 'nanoid';
 import { Formik } from 'formik';
@@ -12,13 +12,11 @@ const Searchbar = ({values, submitHandler }) => {
 
     const handleSubmit = (values, actions) => {
         submitHandler(values);
-        // actions.resetForm();
     };
     let schema = yup.object().shape({
         query: yup.string().required('Required'),
     });
 
-    // console.log(values);
     return(
         <Formik
         initialValues={values}
@@ -46,4 +44,8 @@ const Searchbar = ({values, submitHandler }) => {
     ) 
 };
 
+Searchbar.propTypes = {
+    values: PropTypes.shape().isRequired,
+    submitHandler: PropTypes.func.isRequired,
+};
 export default Searchbar;
