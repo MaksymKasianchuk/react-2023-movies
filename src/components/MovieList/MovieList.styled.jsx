@@ -23,7 +23,7 @@ export const MovieName = styled.p`
 
 export const MovieCard = styled.li`
     width: 100%;
-    // mix-blend-mode: soft-light;
+    background: ${props => props.theme.colors.cardBg};
     box-shadow: ${props => props.theme.colors.boxShadow};
     border-radius: ${props => props.theme.radii.cardBorderRadius}px;
     border: ${props => props.theme.colors.border};

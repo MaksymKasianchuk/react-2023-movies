@@ -10,7 +10,8 @@ export const SearchbarStyled = styled(Form)`
     border-radius: ${props => props.theme.radii.cardBorderRadius}px;
     mix-blend-mode: soft-light;
     box-shadow: ${props => props.theme.colors.boxShadow};
-    margin-top: 5px;
+    margin-top: 15px;
+    background: ${props => props.theme.colors.cardBg};
     &>div{
         display: flex;
         align-items: flex-start;

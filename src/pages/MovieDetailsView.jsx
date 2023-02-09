@@ -2,9 +2,10 @@ import { useParams, useLocation, Link, Outlet, NavLink} from "react-router-dom";
 import { useState, useEffect, Suspense } from "react";
 import { getMovieById } from "api/api";
 import { STATUSES } from 'constants/statuses';
+import { ErrorMessage, MovieBottom, MovieControls } from 'components/App/App.syled';
 import MovieDetails from "components/MovieDetails";
 import Loader from 'components/Loader';
-import { ErrorMessage } from 'components/App/App.syled';
+import GoToLink from "components/GoToLink";
 
 const MovieDeatailsView = () => {
     const { movieId } = useParams();
@@ -40,7 +41,7 @@ const MovieDeatailsView = () => {
     if(appStatus === STATUSES.IDLE || appStatus === STATUSES.PENDING){
         return(
             <main>
-                <Link to={backLinkHref}>👈🏻 Go Back</Link>
+                <GoToLink goToPath={backLinkHref}>👈🏻 Go Back</GoToLink>
                 <Loader />
             </main>
         );
@@ -48,24 +49,26 @@ const MovieDeatailsView = () => {
     if( appStatus === STATUSES.RESOLVED ){
         return(
             <main>
-                <Link to={backLinkHref}>👈🏻 Go Back</Link>
                 <MovieDetails movie={movie} />
-                <div>
-                    <div>
-                        <NavLink to="cast">Cast</NavLink>
-                        <NavLink to="reviews">Rewiews</NavLink>
-                    </div>
-                    <Suspense fallback={<p>Loading page...</p>}>
+                <MovieBottom>
+                    <MovieControls>
+                        <GoToLink goToPath={backLinkHref}>👈🏻 Go Back</GoToLink>
+                        <div>
+                            <NavLink to="cast">Cast</NavLink>
+                            <NavLink to="reviews">Rewiews</NavLink>
+                        </div>
+                    </MovieControls>
+                    <Suspense fallback={<Loader />}>
                         <Outlet />
                     </Suspense>
-                </div>
+                </MovieBottom>
             </main>
         );
     };
     if(appStatus === STATUSES.REJECTED){
         return(
             <main>
-                <Link to={backLinkHref}>👈🏻 Go Back</Link>
+                <GoToLink goToPath={backLinkHref}>👈🏻 Go Back</GoToLink>
                 <ErrorMessage>{error}</ErrorMessage>
             </main>
         );

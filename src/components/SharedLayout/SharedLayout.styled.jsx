@@ -4,6 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 export const Header = styled.header`
     box-shadow: ${props => props.theme.colors.boxShadow};
     border: ${props => props.theme.colors.border};
+    background: ${props => props.theme.colors.cardBg};
     &>div{
         display: flex;
         align-items: center;
@@ -49,7 +50,3 @@ export const NavLinkStyled = styled(NavLink)`
         background-color: #f3f3f3;
     }
 `;
-export const FallbackMsg = styled.p`
-    color: ${props => props.theme.colors.dangerColor}; 
-    text-align: center;
-`

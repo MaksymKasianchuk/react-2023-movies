@@ -9,6 +9,7 @@ export const theme = Object.freeze({
 
         boxShadow: '0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1)',
         btnGrad: 'linear-gradient( 45deg, hsl(346, 95%, 50%) 25%, hsl(406, 95%, 50%))',
+        cardBg: 'rgb(255 255 255 / 60%)',
     },
     radii: {
         cardBorderRadius: '10',

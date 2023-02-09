@@ -7,8 +7,9 @@ export const MovieDetailsWrap = styled.div`
     border: ${props => props.theme.colors.border};
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
-    background: rgb(255 255 255 / 75%);
+    justify-content: flex-start;
+    background: ${props => props.theme.colors.cardBg};
+    margin-top: 40px;
 `;
 
 export const Poster = styled.div`

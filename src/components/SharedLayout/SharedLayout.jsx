@@ -1,7 +1,8 @@
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import { Container } from "components/App/App.syled";
-import { Header, Logo, NavLinkStyled, FallbackMsg } from './SharedLayout.styled';
+import Loader from "components/Loader";
+import { Header, Logo, NavLinkStyled } from './SharedLayout.styled';
 import OrbOverlay from "components/OrbOverlay";
 
 const SharedLayout = () => {
@@ -25,7 +26,7 @@ const SharedLayout = () => {
             </Container>
         </Header>
         <Container>
-            <Suspense fallback={<FallbackMsg>Loading page...</FallbackMsg>}>
+            <Suspense fallback={<Loader />}>
                 <Outlet />
             </Suspense>
         </Container>
